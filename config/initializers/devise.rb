@@ -14,6 +14,8 @@ Devise.setup do |config|
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
 
+  config.omniauth :twitter, "	tf1Jzj9KUcSrt0S00Ld76R1Ev", "4A87pT59RRQWTlcr0U5B0QsSha7Sc6M1jWAykeEdHJVhYOpXK5"
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
