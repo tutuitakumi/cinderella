@@ -1,0 +1,59 @@
+<main>
+  <div id="surface">
+    <div id="side-menu">
+      <a href="/posts">
+        <div class="menu select">
+          <img class="item " src="/white-pumpkin.svg" alt="">
+          <p class="function this">過去の振り返り</p>
+        </div>
+      </a>
+      <%= render partial: 'new_post'%>
+      <a href="/posts/evaluation">
+        <div class="menu">
+          <img class="item" src="/shoes.svg" alt="">
+          <p class="function">評価の振り返り</p>
+        </div>
+      </a>
+      <a href="/posts/conf">
+        <div class="menu">
+          <img class="item" src="/gear.svg" alt="">
+          <p class="function">設定</p>
+        </div>
+      </a>
+
+    </div>
+    <div id="hide"></div>
+
+    <div id="main">
+      <div class="header">
+        <div class="search">
+          <input type="text" id="search-area" placeholder="タイトルで検索する">
+        </div>
+      </div>
+      <div id="header-hd"></div>
+      <div id="content">
+      <% if @posts%>
+        <% @posts.each do |post|%>
+            <%= link_to(post) do%>
+              <div class="post-wrapper">
+                <div class="time-area">
+                  <p class="time"><%= format("%02d",post.month)%><%= format("%02d",post.day)%></p>
+                </div>
+                <div class="title-area">
+                  <p class="title"><span><%= post.title%></span></p>
+                </div>
+              </div>
+            <% end%>
+        <% end%>
+      <% end%>
+      </div>
+      <% if flash[:notice]%>
+        <div id="new-flash">
+          <%= flash[:notice]%>
+        </div>
+      <% end%>
+    </div>
+  </div>
+
+  <%= render partial: 'modal'%>
+</main>

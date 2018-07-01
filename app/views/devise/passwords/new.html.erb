@@ -1,0 +1,20 @@
+<div id="login-wrapper">
+  <img class="cinderella" src="/white-cinderella.svg" alt="">
+  <h2>Forgot your password?</h2>
+  <%= devise_error_messages! %>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+
+    <div class="field">
+      <img src="/mail.svg" alt="">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "再設定用のフォームを受信する" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

@@ -1,0 +1,37 @@
+<main>
+  <div id="surface">
+    <div id="side-menu">
+      <a href="/posts">
+        <div class="menu">
+          <img class="item " src="/pumpkin.svg" alt="">
+          <p class="function">過去の振り返り</p>
+        </div>
+      </a>
+      <%= render partial: 'new_post'%>
+      <a href="/posts/evaluation">
+        <div class="menu">
+          <img class="item" src="/shoes.svg" alt="">
+          <p class="function">評価の振り返り</p>
+        </div>
+      </a>
+      <a href="/posts">
+        <div class="menu selectB">
+          <img class="item" src="/white-gear.svg" alt="">
+          <p class="function this">設定</p>
+        </div>
+      </a>
+
+    </div>
+    <div id="hide"></div>
+
+    <div id="main">
+       <div id="conf">
+          <div class="const">
+            <p>実装中です</p>
+            <p id="twitter">何かあれば運営Twitter<br><span>@tututakusoccer</span><br>までお気軽にどうぞ</p>
+          </div>
+       </div>
+    </div>
+  </div>
+  <%= render partial: 'modal'%>
+</main>

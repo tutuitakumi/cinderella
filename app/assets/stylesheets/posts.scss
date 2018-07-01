@@ -1,0 +1,581 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  margin: 0;
+}
+
+#surface{
+  display: flex;
+}
+
+//side-menu------------------------------------------------
+
+#side-menu{
+  background-color: white;
+  width: 200px;
+  float: left;
+  height: 100%;
+  flex: 0 0 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: #404040 1px 0 4px 0 ;
+  z-index: 999;
+}
+#hide{
+  min-width: 200px;
+}
+
+//main contents--------------------------------------------
+#new-flash{
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(53,0,255,0.5);
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 200px);
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 16px 0;
+  color: white;
+}
+
+#main{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-width: 900px;
+  float: right;
+  flex-direction: column;
+}
+.header{
+  width: calc(100% - 200px);
+  max-width: 1220px;
+  min-width: 900px;
+  height: 72px;
+  background-color: #F85A40;
+  position: fixed;
+  top: 0;
+}
+#header-hd{
+  width: 100%;
+  height: 72px;
+}
+.search{
+  width: auto;
+  min-width: 800px;
+  height: 56px;
+  background-color: white;
+  margin: 8px 24px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input{
+    border: none;
+    width: 95%;
+    font-size: 24px;
+  }
+}
+.menu{
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+.item{
+  width: 128px;
+  height: 128px;
+  margin-top: 24px;
+}
+.select{
+  background-color: #F85A40;
+}
+.selectB{
+  background-color: #3500FF;
+}
+.function{
+  color: #404040;
+  font-size: 16px;
+}
+.this{
+  color: white;
+}
+
+//post wrapper------------------------------------------------
+
+#content{
+  width: 100%;
+  flex-direction: column;
+  background-color: #D6D6E6;
+  min-height: 728px;
+}
+.post-wrapper{
+  width: auto;
+  min-width: 800px;
+  border-radius: 20px;
+  margin: 16px 24px 0 24px;
+  height: 104px;
+  background-color: white;
+  box-shadow: #404040 0 1px 6px 0;
+  display: flex;
+  flex-direction: row;
+}
+.time-area{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time{
+  font-size: 48px;
+  background: -webkit-linear-gradient(left,#F85A40 ,#E85B9D 30%, #3500FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 33px 0;
+  padding: 10px 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.title-area{
+  width: 80%;
+  height: 104px;
+  align-items: center;
+  display: flex;
+}
+.title{
+  width: 100%;
+  height: 1.5em;
+  display: inline-flex;
+  font-size: 30px;
+  background: -webkit-linear-gradient(top,#F85A40 ,#E85B9D 30%, #3500FF);
+  padding-left: 1px;
+  span{
+    color: #595959;
+    width: 100%;
+    font-size: 24px;
+    background-color: white;
+    padding: 15px 0 15px 48px;
+  }
+  input{
+    font-size: 24px;
+    border: none;
+    background-color: white;
+    padding: 15px 0 15px 48px;
+  }
+}
+#post_title{
+  width: 100%;
+  p{
+    margin: auto;
+  }
+}
+
+//new-----------------------------------------------
+
+#new-post-wrapper{
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: #D6D6E6;
+}
+.new{
+  display: flex;
+  border-radius: 16px;
+  min-height: 752px;
+  width: 95%;
+  min-width: 780px;
+  background-color: white;
+  margin: 24px auto;
+  box-shadow: #404040 0 1px 6px 0;
+  flex-direction: column;
+}
+.post-head{
+  display: flex;
+  width: 100%;
+  min-width: 780px;
+}
+.vector{
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: 40px;
+  right: 24px;
+}
+#dummy{
+  min-height: 542px;
+  width: 100%;
+  background: -webkit-linear-gradient(left,#F85A40 ,#E85B9D 30%, #3500FF);
+}
+.post-text{
+  min-height: 540px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  background-color: white;
+  p{
+    line-height: 40px;
+    font-size: 24px;
+    padding: 16px 2.5% 0 2.5%;
+    margin: 0;
+  }
+}
+// this is css for "f.~"-------------------------------------
+#new_post{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #404040;
+}
+#post_content{
+  width: 95%;
+  height: 100%;
+  margin: 16px 2.5% 0 2.5%;
+  border: none;
+  font-size: 24px;
+  min-height: 524px;
+  padding-bottom: 0;
+  color: #404040;
+}
+// end---------------------------------------------------------
+.post-footer{
+  display: flex;
+  height: 105px;
+}
+.evaluate-wrapper{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  input{
+    font-size: 24px;
+    margin: 33px 0;
+    padding: 10px 0;
+    color: #404040;
+    border: none;
+  }
+}
+.evaluate{
+  font-size: 24px;
+  background: -webkit-linear-gradient(left,#F85A40 ,#E85B9D 30%, #3500FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 33px 0;
+  padding: 10px 0;
+}
+.btn-wrapper{
+  display: flex;
+  width: 70%;
+  align-items: center;
+}
+#dummy-btn{
+  width: 96px;
+  background: -webkit-linear-gradient(left,#F85A40 ,#E85B9D 30%, #3500FF);
+  height: 32px;
+  border-radius: 32px;
+  margin-left: 80%;
+}
+.save-btn{
+  width: 94px;
+  height: 30px;
+  margin: 1px 1px;
+  box-shadow: #404040 0 1px 6px 0;
+  background-color: white;
+  border-radius: 32px;
+  text-align: center;
+  input{
+    color: #404040;
+    margin: 0;
+    padding-top: 4px;
+    font-size: 16px;
+    border: none;
+  }
+}
+
+//evaluation--------------------------------------------------------
+#evl-wrapper{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #D6D6E6;
+  min-height: calc(800px - 72px);
+}
+#title{
+  text-align: center;
+}
+#show-chart{
+    float: right;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    top: -48px;
+    right: 56px;
+}
+#show-cnt{
+  display: none;
+  float: left;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  top: -48px;
+  left: 56px;
+}
+#title-text{
+  font-size: 24px;
+  color: white;
+}
+.chart{
+  font-size: 8px;
+  color: white;
+  position: relative;
+  float: right;
+  top: -24px;
+}
+.cnt-text{
+  font-size: 8px;
+  color: white;
+  position: relative;
+  float: left;
+  top: -24px;
+  left: 8px;
+  display: none;
+}
+.column{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.cnt-wrapper{
+  width: 80%;
+  background-color: white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  height: 382px;
+  box-shadow: #404040 1px 1px 4px 0 ;
+}
+.cnt-title{
+  color: #595959;
+  font-size: 32px;
+}
+.cnt{
+  font-size: 200px;
+  background: -webkit-linear-gradient(left,#F85A40 ,#E85B9D 30%, #3500FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 auto ;
+  padding: 120px 0 56px 0;
+  font-family: 'Satisfy', cursive;
+  span{
+    font-size: 104px;
+  }
+}
+
+//-------------------------modal------------------------------------
+#hide-modal{
+  width: 96px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 16px;
+  background-color: white;
+  padding: 4px 8px;
+  border: #404040 1px solid;
+}
+#modal-wrapper{
+  position: absolute;
+  top: 0;
+  left: 200px;
+  width: calc(100% - 200px);
+  background-color: rgba(64,64,64,0.5);
+  align-items: center;
+  z-index: 100;
+  display: none;
+}
+#modal{
+  margin: auto;
+  background-color: white;
+  border-radius: 16px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.modal-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: #404040 1px solid;
+  img{
+    width: 48px;
+    height: 48px;
+    margin-left: 16px;
+  }
+  p{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 16px;
+    color: #404040;
+  }
+}
+.modal-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p{
+    font-size: 16px;
+    margin: 32px auto 24px auto;
+    text-align: center;
+    color: #595959;
+
+    span{
+      font-size: 72px;
+      color: #404040;
+    }
+  }
+}
+
+
+//どこに書いたらいいかわからないのでdevise関連を以下に書きます---------------------
+#flash{
+  position: fixed;
+  top: 0;
+  background-color: rgba(248,90,64,0.5);
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 16px 0;
+  color: white;
+}
+#login-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 800px;
+  background: -webkit-linear-gradient(left,rgba(248,90,64,0.5) , rgba(53,0,255,0.5));
+  h2{
+    text-align: center;
+    color: white;
+    font-family: 'Satisfy', cursive;
+    margin-top: 16px;
+    font-size: 32px;
+  }
+}
+.cinderella{
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+#new_user{
+  width: 30%;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 16px auto;
+  min-width: 400px;
+}
+.field{
+  width: 80%;
+  height: 48px;
+  margin: 24px auto;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  img{
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+  }
+}
+#user_email{
+  background-color: rgba(255,255,255,0);
+  border: none;
+  margin-left: 16px;
+  min-width: 200px;
+  font-size: 16px;
+}
+#user_password{
+  background-color: rgba(255,255,255,0);
+  border: none;
+  margin-left: 16px;
+  min-width: 200px;
+  font-size: 16px;
+}
+#user_password_confirmation{
+  background-color: rgba(255,255,255,0);
+  border: none;
+  margin-left: 16px;
+  min-width: 200px;
+  font-size: 16px;
+}
+#user_remember_me{
+  margin-left: 24px;
+  width: 16px;
+  height: 16px;
+}
+.actions{
+  margin-top: 16px;
+  input{
+    background-color: #9A89FD;
+    min-width: 200px;
+    border-radius: 16px;
+    font-size: 16px;
+    color: white;
+  }
+}
+//error message-----------------------------------------
+
+#error_explanation{
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  li{
+    text-align: left;
+  }
+}
+
+//conf-------------------------------------------
+#conf{
+  height: 800px;
+  background-color: #D6D6E6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.const{
+  width: 80%;
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: #404040 1px 1px 4px 0 ;
+  p{
+    font-size: 104px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(53,0,255,1);
+  }
+}
+#twitter{
+  font-size: 56px;
+  line-height: 80px;
+  span{
+    color: rgba(248,90,64,1);
+  }
+}
+
+
+//responsive-----------------------------------------

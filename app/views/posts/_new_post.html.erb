@@ -1,0 +1,13 @@
+<% if @nowTime.hour == 23 %>
+  <a href="/posts/new">
+    <div class="menu">
+      <img class="item" src="/cinderella.svg" alt="">
+      <p class="function">1日の振り返り</p>
+    </div>
+  </a>
+<% else%>
+    <div class="menu" id="show-modal">
+      <img class="item" src="/cinderella.svg" alt="">
+      <p class="function">1日の振り返り</p>
+    </div>
+<% end%>

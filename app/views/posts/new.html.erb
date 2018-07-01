@@ -1,0 +1,74 @@
+<main>
+  <div id="surface">
+    <div id="side-menu">
+      <a href="/posts">
+        <div class="menu">
+          <img class="item " src="/pumpkin.svg" alt="">
+          <p class="function">過去の振り返り</p>
+        </div>
+      </a>
+      <div class="menu selectB">
+        <img class="item" src="/white-cinderella.svg" alt="">
+        <p class="function this">1日の振り返り</p>
+      </div>
+      <a href="/posts/evaluation">
+        <div class="menu">
+          <img class="item" src="/shoes.svg" alt="">
+          <p class="function">評価の振り返り</p>
+        </div>
+      </a>
+      <a href="/posts/conf">
+        <div class="menu">
+          <img class="item" src="/gear.svg" alt="">
+          <p class="function">設定</p>
+        </div>
+      </a>
+
+    </div>
+    <div id="hide"></div>
+
+    <%= form_for @post, :url=>posts_path do |f|%>
+      <div id="new-post-wrapper">
+        <div class="new">
+          <div class="post-head">
+            <div class="time-area">
+              <p class="time">0<%= @nowTime.month%><%= @nowTime.day%></p>
+            </div>
+            <div class="title-area">
+              <div class="title">
+                <%= f.text_field :title, :maxlength=>20 ,:placeholder=>'20文字以内で1日をまとめたタイトルを' %>
+              </div>
+            </div>
+          </div>
+          <div id="dummy">
+            <div class="post-text">
+              <%= f.text_area :content, :placeholder=>'今日も1日お疲れ様でした。今日はどんな1日でしたか？下の今日の評価を忘れないでね！！'%>
+              <%= f.hidden_field :month, :value=>@nowTime.month%>
+              <%= f.hidden_field :day, :value=>@nowTime.day%>
+              <%= f.hidden_field :user_id, :value=>current_user.id%>
+            </div>
+          </div>
+          <div class="post-footer">
+            <div class="evaluate-wrapper">
+              <p class="evaluate">今日の評価：</p>
+              <%= f.text_field :evaluation, :maxlength=>1 ,:placeholder=>"◯"%>
+              <p class="evaluate">/5</p>
+            </div>
+            <div class="btn-wrapper">
+              <div id="dummy-btn">
+                <div class="save-btn">
+                  <%= button_to "save" ,:action =>"create"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if flash[:notice]%>
+        <div id="new-flash">
+          <%= flash[:notice]%>
+        </div>
+      <% end%>
+    <% end%>
+  </div>
+</main>

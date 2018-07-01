@@ -1,0 +1,13 @@
+<div id="modal-wrapper">
+  <div id="modal">
+    <div class="modal-header">
+      <img src="/clock.svg" alt="">
+      <p>振り返るにはまだ少し早い…</p>
+    </div>
+    <div class="modal-main">
+      <p>振り返りまであと</p>
+      <p><span><%= 22-@nowTime.hour%></span>h <span><%= 60-@nowTime.minute%></span>min</p>
+      <p id="hide-modal">Close</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<main>
+  <div id="surface">
+    <div id="side-menu">
+      <a href="/posts">
+        <div class="menu select">
+          <img class="item" src="/white-pumpkin.svg" alt="">
+          <p class="function this">過去の振り返り</p>
+        </div>
+      </a>
+      <%= render partial: 'new_post'%>
+      <a href="/posts">
+        <div class="menu">
+          <img class="item" src="/shoes.svg" alt="">
+          <p class="function">評価の振り返り</p>
+        </div>
+      </a>
+      <a href="/posts">
+        <div class="menu">
+          <img class="item" src="/gear.svg" alt="">
+          <p class="function">設定</p>
+        </div>
+      </a>
+    </div>
+    <div id="hide"></div>
+
+    <div id="new-post-wrapper">
+      <div class="new">
+        <div class="post-head">
+          <div class="time-area">
+            <p class="time"><%= format("%02d",@post.month)%><%= format("%02d",@post.day)%></p>
+          </div>
+          <div class="title-area">
+            <p class="title"><span><%= @post.title%></span></p>
+          </div>
+          <a href="/posts">
+            <img class="vector" src="/vector.svg" alt="">
+          </a>
+        </div>
+        <div id="dummy">
+          <div class="post-text">
+            <p><%= simple_format(@post.content)%></p>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="evaluate-wrapper">
+            <p class="evaluate">今日の評価：</p>
+            <p class="evaluate"><%= @post.evaluation%></p>
+            <p class="evaluate">/5</p>
+          </div>
+          <div class="btn-wrapper">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

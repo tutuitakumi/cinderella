@@ -1,0 +1,28 @@
+<div id="login-wrapper">
+  <img class="cinderella" src="/white-cinderella.svg" alt="">
+  <h2>Sign up</h2>
+  <%= devise_error_messages! %>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <div class="field">
+      <img src="/mail.svg" alt="">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder: "メールアドレス" %>
+    </div>
+
+    <div class="field">
+      <img src="/key.svg" alt="">
+      <%= f.password_field :password, autocomplete: "off", placeholder:"パスワードは#{@minimum_password_length}文字以上" %>
+    </div>
+
+    <div class="field">
+      <img src="/key.svg" alt="">
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"もう1度パスワードを入力" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

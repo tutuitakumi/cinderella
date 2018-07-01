@@ -1,0 +1,62 @@
+<main>
+  <div id="surface">
+    <div id="side-menu">
+      <a href="/posts">
+        <div class="menu">
+          <img class="item " src="/pumpkin.svg" alt="">
+          <p class="function">過去の振り返り</p>
+        </div>
+      </a>
+      <%= render partial: 'new_post'%>
+      <a href="/posts/evaluation">
+        <div class="menu select">
+          <img class="item" src="/white-shoes.svg" alt="">
+          <p class="function this">評価の振り返り</p>
+        </div>
+      </a>
+      <a href="/posts/conf">
+        <div class="menu">
+          <img class="item" src="/gear.svg" alt="">
+          <p class="function">設定</p>
+        </div>
+      </a>
+
+    </div>
+    <div id="hide"></div>
+
+    <div id="main">
+      <div class="header">
+        <div id="title">
+          <p id="title-text">投稿の振り返り</p>
+          <img id="show-chart" src="/right-vector.svg" alt="">
+          <img id="show-cnt" src="/left-vector.svg" alt="">
+          <p class="chart">今月の評価グラフ</p>
+          <p class="cnt-text">投稿の振り返り</p>
+        </div>
+      </div>
+      <div id="header-hd"></div>
+      <div id="evl-wrapper">
+        <div class="column">
+          <div class="cnt-wrapper">
+            <p class="cnt-title">総投稿数</p>
+            <p class="cnt"><%= current_user.post_cnt%></p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="cnt-wrapper">
+            <p class="cnt-title">今月の投稿率</p>
+            <p class="cnt"><%= @percent%><span>%</span></p>
+          </div>
+        </div>
+
+      </div>
+      <% if @percent>=80%>
+        <div id="new-flash">
+          この調子で頑張ろう！！
+        </div>
+      <% end%>
+    </div>
+  </div>
+
+  <%= render partial: 'modal'%>
+</main>
